@@ -12,7 +12,6 @@ function Menu() {
       .then((res) => res.json())
       .then((data) => {
         setCartList(data);
-        console.log(data);
         setLoading(false);
       });
   }, []);

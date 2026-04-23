@@ -23,7 +23,8 @@ const CartListProvider = ({ children }) => {
   const [cartList, dispatchCartList] = useReducer(cartListReducer, []);
 
   const addItem = (data) => {
-    console.log(data);
+    // console.log(data);
+
     dispatchCartList({
       type: "ADD_ITEM",
     });

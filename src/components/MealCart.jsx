@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { CartContext } from "../context/CartContext";
 
 function MealCart({ menu }) {
+  const { addItem } = useContext(CartContext);
   return (
     <div className="">
       <div className="">
@@ -12,7 +14,7 @@ function MealCart({ menu }) {
         <p className="text-xs">{menu.dsc}</p>
         <div className="flex justify-between items-center">
           <p className="text-yellow-800 font-semibold">Price ${menu.price}</p>
-          <button>
+          <button onClick={addItem("Hello world data")}>
             <MdOutlineAddShoppingCart className="text-2xl hover:text-red-500 cursor-pointer" />
           </button>
         </div>
@@ -22,13 +24,3 @@ function MealCart({ menu }) {
 }
 
 export default MealCart;
-
-{
-  /* <p>country</p>
-      <p>desc</p>
-      <p>id</p>
-      <p>image</p>
-      <p>name</p>
-      <p>price</p>
-      <p>rate</p> */
-}
